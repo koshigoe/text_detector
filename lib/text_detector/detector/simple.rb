@@ -1,3 +1,5 @@
+require_relative 'base'
+
 module TextDetector
   module Detector
     # BM法っぽく(トライ木を調べてる時に見かけた実装を参考に)

@@ -1,3 +1,5 @@
+require_relative 'dictionary/file'
+
 module TextDetector
   module Dictionary
     def self.factory(dictionary)

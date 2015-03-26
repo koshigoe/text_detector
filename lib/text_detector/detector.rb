@@ -1,3 +1,6 @@
+require_relative 'detector/simple'
+require_relative 'detector/regexp'
+
 module TextDetector
   module Detector
     def self.factory(type, dictionary)

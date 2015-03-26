@@ -1,3 +1,5 @@
+require_relative 'base'
+
 module TextDetector
   module Dictionary
     class File < Base

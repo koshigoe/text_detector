@@ -1,3 +1,6 @@
+require_relative 'detector'
+require_relative 'dictionary'
+
 module TextDetector
   class Executor
     def initialize(type, dictionary)
