@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe TextDetector::Executor do
-  describe '#detect?' do
+  describe '#detect' do
     let(:dictionary) { open(File.absolute_path('../data/text_detector/dictionary.txt', File.dirname(__FILE__))) }
     subject { described_class.new(type, dictionary).detect(text) }
 
