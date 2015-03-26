@@ -8,6 +8,10 @@ module TextDetector
         detected ? detected.to_s : nil
       end
 
+      def detect_all(text)
+        text.scan(@re)
+      end
+
       protected
 
       def setup

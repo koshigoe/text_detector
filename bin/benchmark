@@ -51,39 +51,55 @@ regexp_detector = TextDetector.factory(:regexp, open('dictionary.txt'))
 mini_simple_detector = TextDetector.factory(:simple, open('mini-dictionary.txt'))
 mini_regexp_detector = TextDetector.factory(:regexp, open('mini-dictionary.txt'))
 
-results = { simple: [], regexp: [] }
-Benchmark.bm do |x|
-  x.report do
+Benchmark.bm(22) do |x|
+  x.report('simple detect') do
     testdata.each do |text|
-      results[:simple] << simple_detector.detect(text)
+      simple_detector.detect(text)
     end
   end
 
-  x.report do
+  x.report('regexp detect') do
     testdata.each do |text|
-      results[:regexp] << regexp_detector.detect(text)
+      regexp_detector.detect(text)
     end
   end
 
-  x.report do
+  x.report('mini simple detect') do
     testdata.each do |text|
-      results[:simple] << mini_simple_detector.detect(text)
+      mini_simple_detector.detect(text)
     end
   end
 
-  x.report do
+  x.report('mini regexp detect') do
     testdata.each do |text|
-      results[:regexp] << mini_regexp_detector.detect(text)
+      mini_regexp_detector.detect(text)
+    end
+  end
+
+  x.report('simple detect_all') do
+    testdata.each do |text|
+      simple_detector.detect_all(text)
+    end
+  end
+
+  x.report('regexp detect_all') do
+    testdata.each do |text|
+      regexp_detector.detect_all(text)
+    end
+  end
+
+  x.report('mini simple detect_all') do
+    testdata.each do |text|
+      mini_simple_detector.detect_all(text)
+    end
+  end
+
+  x.report('mini regexp detect_all') do
+    testdata.each do |text|
+      mini_regexp_detector.detect_all(text)
     end
   end
 end
-
-if results[:simple] == results[:regexp]
-  puts 'ok'
-else
-  puts 'ng'
-end
-
 
 __END__
 　吾輩《わがはい》は猫である。名前はまだ無い。

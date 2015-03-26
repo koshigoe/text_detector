@@ -10,5 +10,9 @@ module TextDetector
     def detect(text)
       @detector.detect(TextDetector.normalize(text))
     end
+
+    def detect_all(text)
+      @detector.detect_all(TextDetector.normalize(text))
+    end
   end
 end

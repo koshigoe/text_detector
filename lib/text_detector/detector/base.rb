@@ -12,6 +12,10 @@ module TextDetector
         raise NotImplementedError
       end
 
+      def detect_all(text)
+        raise NotImplementedError
+      end
+
       protected
 
       def setup
