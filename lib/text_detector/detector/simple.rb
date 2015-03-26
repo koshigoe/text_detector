@@ -16,6 +16,8 @@ module TextDetector
 
       def detect_n(text, limit = nil)
         results = []
+        original = text
+        text = TextDetector.normalize(original)
 
         # 0文字目から末尾の一つ前まで一文字ずつ始点を移動していく
         0.upto(text.size - 1) do |start|
@@ -26,7 +28,7 @@ module TextDetector
             break if size > target.size
 
             # 切り出した文字列が辞書に含まれていれば記録
-            results << target if dictionary.lookup(target)
+            results << original[start, size] if dictionary.lookup(target)
 
             # 制限数までヒットしたら探索終了
             return results if limit && results.size == limit

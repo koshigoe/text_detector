@@ -13,18 +13,18 @@ RSpec.describe TextDetector::Executor do
       end
 
       context '検出対象文字列で始まる' do
-        let(:text) { 'NGわーど1 ---' }
-        it { is_expected.to eq('NGワード1') }
+        let(:text) { 'NGわーど1à ---' }
+        it { is_expected.to eq('NGわーど1à') }
       end
 
       context '検出対象文字列を含む' do
-        let(:text) { '--- NGわーど1 ---' }
-        it { is_expected.to eq('NGワード1') }
+        let(:text) { '--- NGわーど1à ---' }
+        it { is_expected.to eq('NGわーど1à') }
       end
 
       context '検出対象文字列で終わる' do
-        let(:text) { '--- NGわーど1' }
-        it { is_expected.to eq('NGワード1') }
+        let(:text) { '--- NGわーど1à' }
+        it { is_expected.to eq('NGわーど1à') }
       end
     end
 
@@ -49,18 +49,18 @@ RSpec.describe TextDetector::Executor do
       end
 
       context '検出対象文字列で始まる' do
-        let(:text) { 'NGわーど1 NGわーど2 NGわーど3 NGわーど4 NGわーど5 NGわーど6 NGわーど7 NGわーど8 NGわーど9 ---' }
-        it { is_expected.to match_array(%w(NGワード1 NGワード2 NGワード3 NGワード4 NGワード5 NGワード6 NGワード7 NGワード8 NGワード9)) }
+        let(:text) { 'NGわーど1à NGわーど2à NGわーど3à NGわーど4à NGわーど5à NGわーど6à NGわーど7à NGわーど8à NGわーど9à ---' }
+        it { is_expected.to match_array(%w(NGわーど1à NGわーど2à NGわーど3à NGわーど4à NGわーど5à NGわーど6à NGわーど7à NGわーど8à NGわーど9à)) }
       end
 
       context '検出対象文字列を含む' do
-        let(:text) { '--- NGわーど1 NGわーど2 NGわーど3 NGわーど4 NGわーど5 NGわーど6 NGわーど7 NGわーど8 NGわーど9 ---' }
-        it { is_expected.to match_array(%w(NGワード1 NGワード2 NGワード3 NGワード4 NGワード5 NGワード6 NGワード7 NGワード8 NGワード9)) }
+        let(:text) { '--- NGわーど1à NGわーど2à NGわーど3à NGわーど4à NGわーど5à NGわーど6à NGわーど7à NGわーど8à NGわーど9à ---' }
+        it { is_expected.to match_array(%w(NGわーど1à NGわーど2à NGわーど3à NGわーど4à NGわーど5à NGわーど6à NGわーど7à NGわーど8à NGわーど9à)) }
       end
 
       context '検出対象文字列で終わる' do
-        let(:text) { '--- NGわーど1 NGわーど2 NGわーど3 NGわーど4 NGわーど5 NGわーど6 NGわーど7 NGわーど8 NGわーど9' }
-        it { is_expected.to match_array(%w(NGワード1 NGワード2 NGワード3 NGワード4 NGワード5 NGワード6 NGワード7 NGワード8 NGワード9)) }
+        let(:text) { '--- NGわーど1à NGわーど2à NGわーど3à NGわーど4à NGわーど5à NGわーど6à NGわーど7à NGわーど8à NGわーど9à' }
+        it { is_expected.to match_array(%w(NGわーど1à NGわーど2à NGわーど3à NGわーど4à NGわーど5à NGわーど6à NGわーど7à NGわーど8à NGわーど9à)) }
       end
     end
 

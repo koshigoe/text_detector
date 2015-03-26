@@ -4,12 +4,20 @@ module TextDetector
   module Detector
     class Regexp < Base
       def detect(text)
-        detected = @re.match(text)
-        detected ? detected.to_s : nil
+        matched = @re.match(TextDetector.normalize(text))
+        if matched
+          offset = matched.offset(0)
+          text.slice(offset[0], offset[1] - offset[0])
+        else
+          nil
+        end
       end
 
       def detect_all(text)
-        text.scan(@re)
+        TextDetector.normalize(text).to_enum(:scan, @re).map do
+          offset = ::Regexp.last_match.offset(0)
+          text.slice(offset[0], offset[1] - offset[0])
+        end
       end
 
       protected

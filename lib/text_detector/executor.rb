@@ -8,11 +8,11 @@ module TextDetector
     end
 
     def detect(text)
-      @detector.detect(TextDetector.normalize(text))
+      @detector.detect(TextDetector.shallow_normalize(text))
     end
 
     def detect_all(text)
-      @detector.detect_all(TextDetector.normalize(text))
+      @detector.detect_all(TextDetector.shallow_normalize(text))
     end
   end
 end

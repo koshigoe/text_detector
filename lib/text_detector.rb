@@ -7,7 +7,11 @@ module TextDetector
     Executor.new type, dictionary
   end
 
+  def self.shallow_normalize(text)
+    text.unicode_normalize(:nfc)
+  end
+
   def self.normalize(text)
-    NKF.nkf('--katakana -w', text).unicode_normalize(:nfc)
+    NKF.nkf('--katakana -w', shallow_normalize(text))
   end
 end
