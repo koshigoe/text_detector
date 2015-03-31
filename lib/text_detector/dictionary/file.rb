@@ -20,15 +20,14 @@ module TextDetector
         @dictionary = Set.new
         @depth = []
 
-        open(dictionary) do |input|
-          input.each_line do |line|
-            text = TextDetector.normalize(line.chomp)
-            next if text.size == 0
+        dictionary.each_line do |line|
+          text = TextDetector.normalize(line.chomp)
+          next if text.size == 0
 
-            @dictionary << text
-            @depth << text.size
-          end
+          @dictionary << text
+          @depth << text.size
         end
+
         @depth = @depth.sort.uniq
       end
     end

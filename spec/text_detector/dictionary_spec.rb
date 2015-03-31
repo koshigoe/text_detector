@@ -7,5 +7,16 @@ RSpec.describe TextDetector::Dictionary do
       subject { described_class.factory dictionary }
       it { is_expected.to a_kind_of(TextDetector::Dictionary::File) }
     end
+
+    context 'StringIO' do
+      let(:dictionary) { StringIO.new }
+      subject { described_class.factory dictionary }
+      it { is_expected.to a_kind_of(TextDetector::Dictionary::File) }
+    end
   end
 end
+
+
+
+
+
