@@ -3,9 +3,7 @@
 
 # TextDetector
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/text_detector`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is an experimental implementation for detecting text from document.
 
 ## Installation
 
@@ -25,7 +23,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+See also `bin/benchmark` and `examples/`.
+
+### Regexp
+
+```ruby
+require 'text_detector'
+regexp_detector = TextDetector.factory(:regexp, open('dictionary.txt'))
+regexp_detector.detect('The detector detects NG word from this document. The dictionary has many NG words.')
+```
+
+### Like Boyer-Moore String Search Algorithm
+
+```ruby
+require 'text_detector'
+simple_detector = TextDetector.factory(:simple, open('dictionary.txt'))
+simple_detector.detect('The detector detects NG word from this document. The dictionary has many NG words.')
+```
 
 ## Development
 

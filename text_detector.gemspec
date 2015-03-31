@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["koshigoe"]
   spec.email         = ["koshigoeb@gmail.com"]
 
-  spec.summary       = %q{Text detector.}
-  spec.description   = %q{Text detector}
+  spec.summary       = %q{This is an experimental implementation for detecting text from document.}
+  spec.description   = %q{This is an experimental implementation for detecting text from document.}
   spec.homepage      = "https://github.com/koshigoe/text_detector"
   spec.license       = "MIT"
 
