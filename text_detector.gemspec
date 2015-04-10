@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{This is an experimental implementation for detecting text from document.}
   spec.description   = %q{This is an experimental implementation for detecting text from document.}
-  spec.homepage      = "https://github.com/koshigoe/text_detector"
+  spec.homepage      = "https://github.com/feedforce/text_detector"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
