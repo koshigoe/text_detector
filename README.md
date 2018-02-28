@@ -1,5 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/text_detector.svg)](http://badge.fury.io/rb/text_detector)
-![Build Status](https://circleci.com/gh/feedforce/text_detector.svg?style=shield)
+[![Build Status](https://travis-ci.org/feedforce/text_detector.svg?branch=master)](https://travis-ci.org/feedforce/text_detector)
 
 # TextDetector
 
